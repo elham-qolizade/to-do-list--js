@@ -1,0 +1,60 @@
+.list-item {
+    margin-right: -8%;
+    display: flex;
+    width: 29%;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    background: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-text {
+    padding: 5% 32%;
+    border-radius: 10px;
+    border: none;
+    margin-right: 4%;
+}
+
+.addtext {
+    padding: 17px;
+    border-radius: 10px;
+    border: none;
+    background-color: cadetblue;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+    background-color: cadetblue;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1px;
+
+}
