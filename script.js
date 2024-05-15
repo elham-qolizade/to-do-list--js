@@ -97,9 +97,9 @@ addTaskButton.addEventListener('click', () => {
 });
 //drag & drop
 const sortableList =
-    document.getElementById("listText");
+    document.getElementById("list-item");
 let draggedItem = null;
-//drag start
+//dragstart
 sortableList.addEventListener(
     "dragstart",
     (e) => {
