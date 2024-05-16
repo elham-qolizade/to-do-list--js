@@ -127,7 +127,7 @@ sortableList.addEventListener(
                 "none";
         }, 0);
     });
-
+//dragend
 sortableList.addEventListener(
     "dragend",
     (e) => {
@@ -136,7 +136,7 @@ sortableList.addEventListener(
             draggedItem = null;
         }, 0);
     });
-
+//dragover
 sortableList.addEventListener(
     "dragover",
     (e) => {
@@ -152,14 +152,15 @@ sortableList.addEventListener(
             sortableList.appendChild(
                 draggedItem
             );
-        }
-        else {
+        } else {
             sortableList.insertBefore(
                 draggedItem,
                 afterElement
             );
         }
-    });
+        saveLocalStorage();//save in localstorage
+    }
+);
 
 const getDragAfterElement = (
     container, y
