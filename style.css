@@ -42,8 +42,8 @@ ul {
 }
 
 button {
-    padding: 5px 10px;
-    background-color: #f44336;
+    padding: 3px 5px;
+    background-color: red;
     color: white;
     border: none;
     cursor: pointer;
@@ -53,6 +53,7 @@ button {
 li {
     list-style: none;
     padding: 10px;
+    color: black;
     background-color: cadetblue;
     border-bottom: 1px solid #ccc;
     margin-bottom: 1px;

@@ -1,5 +1,5 @@
-const addTaskButton = document.getElementById('btn'); //  button ID
-const textInput = document.getElementById('text-input'); //  input ID
+const addTaskButton = document.getElementById('btn'); //  button ID
+const textInput = document.getElementById('text-input'); //  input ID
 const todoList = document.getElementById('list-item'); // list ID
 
 // Function to save the to-do list to Local Storage
@@ -8,23 +8,27 @@ function saveLocalStorage() {
     const items = todoList.getElementsByTagName('li');
     for (let i = 0; i < items.length; i++) {
         const itemElement = items[i];
-        const textContent = itemElement.textContent;
+        const textContent = itemElement.querySelector('span').textContent; // Get text from span
         const isChecked = itemElement.querySelector('input[type="checkbox"]').checked;
         list.push({ text: textContent, completed: isChecked });
     }
-    localStorage.setItem('todoList', JSON.stringify(list)); //  storage key
+    localStorage.setItem('todoList', JSON.stringify(list)); //  storage key
 }
 
-function loadList() { //  function name
+function loadList() { //  function name
     if (localStorage.getItem('todoList') !== null) {
         const toDos = JSON.parse(localStorage.getItem('todoList'));
         for (let i = 0; i < toDos.length; i++) {
             const todo = toDos[i];
             const li = document.createElement('li');
             li.draggable = true;
-            li.textContent = todo.text;
 
-            const checkbox = document.createElement('input'); //  checkbox element name
+            // Create a span element to hold the text content
+            const textSpan = document.createElement('span');
+            textSpan.textContent = todo.text;
+            li.appendChild(textSpan); // Add span to li
+
+            const checkbox = document.createElement('input'); //  checkbox element name
             checkbox.setAttribute('type', 'checkbox');
             checkbox.checked = todo.completed;
             li.appendChild(checkbox);
@@ -34,6 +38,7 @@ function loadList() { //  function name
             }
 
             todoList.appendChild(li);
+
             // delet text
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'Delete';
@@ -57,7 +62,8 @@ function loadList() { //  function name
     }
 }
 
-loadList(); //  function call
+loadList(); //  function call
+
 //addtask whith input keypress
 textInput.addEventListener('keyup', function (event) {
     if (event.key === 'Enter' && textInput.value) {
@@ -65,14 +71,18 @@ textInput.addEventListener('keyup', function (event) {
     }
 });
 
-//addtask whith button click
+//addtask whith input keypress
 function addToList() {
     const text = textInput.value.trim();
     if (text !== "") {
         const li = document.createElement('li');
         li.draggable = true;
-        li.textContent = text;
-        //checkbox
+
+        // Create a span element to hold the text content
+        const textSpan = document.createElement('span');
+        textSpan.textContent = text;
+        li.appendChild(textSpan); // Add span to li
+
         const checkbox = document.createElement('input');
         checkbox.setAttribute('type', 'checkbox');
         li.appendChild(checkbox);
@@ -87,6 +97,7 @@ function addToList() {
             }
             saveLocalStorage();
         });
+
         //delete task
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
@@ -101,12 +112,12 @@ function addToList() {
         textInput.value = "";
         saveLocalStorage();
     }
-};
+}
 //drag & drop
 const sortableList =
     document.getElementById("list-item");
 let draggedItem = null;
-//یragstart
+//dragstart
 sortableList.addEventListener(
     "dragstart",
     (e) => {
