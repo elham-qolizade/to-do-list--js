@@ -58,8 +58,15 @@ function loadList() { //  function name
 }
 
 loadList(); //  function call
-//addtask
-addTaskButton.addEventListener('click', () => {
+//addtask whith input keypress
+textInput.addEventListener('keyup', function (event) {
+    if (event.key === 'Enter' && textInput.value) {
+        addToList();
+    }
+});
+
+//addtask whith button click
+function addToList() {
     const text = textInput.value.trim();
     if (text !== "") {
         const li = document.createElement('li');
@@ -94,12 +101,12 @@ addTaskButton.addEventListener('click', () => {
         textInput.value = "";
         saveLocalStorage();
     }
-});
+};
 //drag & drop
 const sortableList =
     document.getElementById("list-item");
 let draggedItem = null;
-//dragstart
+//یragstart
 sortableList.addEventListener(
     "dragstart",
     (e) => {
@@ -109,7 +116,7 @@ sortableList.addEventListener(
                 "none";
         }, 0);
     });
-//dragend
+
 sortableList.addEventListener(
     "dragend",
     (e) => {
@@ -118,7 +125,7 @@ sortableList.addEventListener(
             draggedItem = null;
         }, 0);
     });
-//dragover
+
 sortableList.addEventListener(
     "dragover",
     (e) => {
