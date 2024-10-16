@@ -1,39 +1,85 @@
-.list-item {
-    margin-right: -8%;
-    display: flex;
-    width: 29%;
-    flex-direction: column;
-    align-items: center;
-}
-
-body {
+body{
     background: aliceblue;
+    margin: 0;
+    padding: 0;
+}
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-}
+    height: 100vh;
 
-ul {
+}
+ul{
     display: flex;
     flex-direction: column;
+    gap:20px;
+
+}
+
+
+.img-icon{
+    width: 40px;
+    height: 40px;
+}
+
+.todo-app{
+    width: 90%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 .input-text {
-    padding: 5% 32%;
+   padding: 5%;
     border-radius: 10px;
     border: none;
-    margin-right: 4%;
+    background-color: aliceblue;
+    margin-right: 5%;
+
+    border: none;
+    outline: none;
+  
 }
 
 .addtext {
-    padding: 17px;
+  
     border-radius: 10px;
     border: none;
     background-color: cadetblue;
     color: white;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 8px 18px;
+    border: none;
+    outline: none;
+ 
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 40px;
+
+}
+.todo-app h2{
+    color: #002765;
+}
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.todo-app h2 img{
+width: 30px;
+margin-left: 10px;
+color: #002765;
+margin: 0;
 
 }
 
@@ -50,12 +96,33 @@ button {
     border-radius: 5px;
 }
 
-li {
+li{
     list-style: none;
-    padding: 10px;
-    color: black;
-    background-color: cadetblue;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 1px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+
+cursor: pointer;
 
 }
+.row{
+    display: flex;
+    align-items: center;
+  
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .todo-app {
+        width: 100%;
+    }
+} 
+

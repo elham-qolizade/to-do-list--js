@@ -11,22 +11,31 @@
 
 <body>
 
+    <div class="container">
+    <div class="todo-app">
+        <div class="title" >    
+        <h2>TO-DO-LIST</h2>
+        <img class="img-icon" src="icon.png" alt="">
+    </div>
+   
+        
+    <div class="row">
 
-    <div style="display: flex; flex-direction: row;">
-
-        <input class="input-text" type="text" placeholder="Enter text" id="text-input">
+        <input class="input-text" type="text" placeholder="Add your text" id="text-input">
 
         <button class="addtext" onclick="addToList()">
             Add
         </button>
     </div>
-
+    
     <div class="list-item">
-        <ul id="list-item" style="width: 91%;">
-
+        <ul class="list-item" id="list-item" >
+      
         </ul>
     </div>
+    </div>
 
+</div>
 </body>
 
 <script src="script.js">
